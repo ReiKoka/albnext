@@ -1,7 +1,7 @@
 import { use } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import LightModeLogo from "../../assets/images/favicon_1_light_mode.svg?react";
-import DarkModeLogo from "../../assets/images/Favicon_1_dark_mode.svg?react";
+import DarkModeLogo from "../../assets/images/favicon_1_dark_mode.svg?react";
 
 function Logo() {
   const themeContext = use(ThemeContext);
