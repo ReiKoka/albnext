@@ -1,0 +1,42 @@
+import { createContext, ReactNode, useEffect } from "react";
+import { useLocalStorage } from "usehooks-ts";
+import { Theme } from "../utils/types";
+import { applyTheme } from "../utils/applyTheme";
+
+type ThemeContextType = {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+  removeTheme: () => void;
+};
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+type ThemeProviderPropTypes = {
+  children: ReactNode;
+};
+
+export const ThemeProvider = ({ children }: ThemeProviderPropTypes) => {
+  const [theme, setTheme, removeTheme] = useLocalStorage<Theme>(
+    "theme",
+    "light",
+  );
+
+  useEffect(() => {
+    applyTheme(theme as Theme);
+  }, [theme]);
+
+  const setThemeAndPersist = (newTheme: Theme) => {
+    setTheme(newTheme);
+  };
+
+  // Create a properly typed context value
+  const contextValue: ThemeContextType = {
+    theme,
+    setTheme: setThemeAndPersist,
+    removeTheme,
+  };
+
+  return <ThemeContext value={contextValue}>{children}</ThemeContext>;
+};
+
+export { ThemeContext };
