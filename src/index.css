@@ -126,8 +126,8 @@
   --foreground: hsl(0, 0%, 95%);
   --primary: hsl(180, 98%, 41%);
   --primary-foreground: hsl(0, 0%, 95%);
-  --muted: hsl(173, 20%, 16%);
-  --muted-foreground: hsl(211 5% 60%);
+  --muted: hsl(210, 34%, 17%);
+  --muted-foreground: hsl(212, 7%, 63%);
   --destructive: hsl(0 60% 50%);
   --destructive-foreground: hsl(276 5% 90%);
   --border: hsl(211 20% 18%);

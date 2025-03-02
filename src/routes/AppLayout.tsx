@@ -16,7 +16,7 @@ function AppLayout() {
     <div className="mx-auto h-auto min-h-screen w-dvw max-w-[2000px]">
       <Nav navRef={navRef} />
       <Home navHeight={navHeight} />
-      <h1>HEYYYYY</h1>
+      <h1></h1>
     </div>
   );
 }
