@@ -14,24 +14,24 @@ function Home({ navHeight }: { navHeight: number }) {
         <div className="flex flex-col items-center gap-4 ">
           <Button
             variant="outline"
-            className="font-primary border-background text-background flex w-full items-center justify-center border-2 text-sm"
+            className="font-primary dark:text-foreground dark:border-foreground border-background text-background flex w-full items-center justify-center border-2 text-sm"
           >
             <HiOutlineBriefcase
               size={20}
               strokeWidth={2}
-              className="stroke-background"
+              className="stroke-background dark:stroke-foreground "
             />
             <span>Set up a business</span>
           </Button>
 
           <Button
             variant="outline"
-            className="font-primary border-background text-background flex w-full items-center justify-center border-2 text-sm"
+            className="font-primary dark:text-foreground dark:border-foreground border-background text-background flex w-full items-center justify-center border-2 text-sm"
           >
             <HiOutlineHome
               size={20}
               strokeWidth={2}
-              className="stroke-background"
+              className="stroke-background dark:stroke-foreground"
             />
             <span>Live & Work</span>
           </Button>
