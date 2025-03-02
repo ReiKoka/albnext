@@ -12,8 +12,6 @@ function Logo() {
 
   const { theme } = themeContext;
 
-  console.log(theme);
-
   return (
     <div>
       {theme === "light" ? (

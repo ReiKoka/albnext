@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import AppLayout from "./routes/AppLayout";
 import Login from "./routes/Login";
 import { ThemeProvider } from "./context/ThemeContext";
+import { NavHeightProvider } from "./context/NavHeightContext";
 
 const hostname = window.location.hostname;
 const isAdmin = hostname.startsWith("admin");
@@ -18,7 +19,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ThemeProvider>
-      <RouterProvider router={router} />
+      <NavHeightProvider>
+        <RouterProvider router={router} />
+      </NavHeightProvider>
     </ThemeProvider>
   );
 }

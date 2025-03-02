@@ -91,34 +91,52 @@
 
 :root {
   --background: hsl(0, 0%, 95%);
-  --foreground: hsl(211, 81%, 8%);
+  --foreground: hsl(211, 80%, 8%);
   --primary: hsl(180, 98%, 41%);
   --primary-foreground: hsl(0, 0%, 95%);
-  /* --secondary: hsl(276 10% 70%);
-  --secondary-foreground: hsl(0 0% 0%);
-  --muted: hsl(238 10% 85%);
-  --muted-foreground: hsl(276 5% 40%); */
+  --secondary: hsl(211, 20%, 50%);
+  --secondary-foreground: hsl(211, 80%, 8%);
+  --muted: hsl(173, 10%, 92%);
+  --muted-foreground: hsl(211, 5%, 40%);
+  --destructive: hsl(0 55% 50%);
+  --destructive-foreground: hsl(280, 6%, 90%);
+  --border: hsl(211, 20%, 82%);
+  --input: hsl(180, 98%, 25%);
+  --ring: hsl(211, 80.5%, 8%);
+}
+
+.dark {
+  --background: hsl(211, 81%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --primary: #02cfcf;
+  --primary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(238 10% 25%);
+  --muted-foreground: hsl(276 5% 60%);
   --destructive: hsl(0 60% 50%);
   --destructive-foreground: hsl(276 5% 90%);
-  --border: hsl(276 20% 55%);
+  --border: hsl(276 20% 50%);
   --input: hsl(276 20% 50%);
   --ring: hsl(180, 98%, 41%);
+  --shadow-custom: hsla(211, 81%, 8%, 0.4) 0px 30px 90px;
+  --shadow-toast: hsla(0, 0%, 39%, 0.5) 0px 2px 8px 0px;
 }
 
 .dark {
   --background: hsl(211, 81%, 8%);
   --foreground: hsl(0, 0%, 95%);
   --primary: hsl(180, 98%, 41%);
-  /* --primary-foreground: hsl(0, 0%, 95%);
-  --secondary: hsl(276 10% 20%);
-  --secondary-foreground: hsl(0 0% 100%);
-  --muted: hsl(238 10% 25%);
-  --muted-foreground: hsl(276 5% 60%); */
+  --primary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(173, 20%, 16%);
+  --muted-foreground: hsl(211 5% 60%);
   --destructive: hsl(0 60% 50%);
   --destructive-foreground: hsl(276 5% 90%);
-  --border: hsl(276 20% 50%);
-  --input: hsl(276 20% 50%);
+  --border: hsl(211 20% 18%);
+  --input: hsl(180, 98%, 25%);
   --ring: hsl(180, 98%, 41%);
+  --shadow-custom: hsla(211, 81%, 8%, 0.4) 0px 30px 90px;
+  --shadow-toast:
+    hsla(211, 81%, 8%, 0.16) 0px 2px 4px 0px,
+    hsla(211, 81%, 8%, 0.32) 0px 2px 16px 0px;
 }
 
 @theme inline {
@@ -137,9 +155,13 @@
   --color-ring: var(--ring);
   --font-primary: "Helvetica Neue", sans-serif;
   --font-secondary: "Ogilvy Sans Serif", sans-serif;
-  --shadow-custom: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-  --shadow-toast: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  --shadow-toast-dark:
-    hsla(276, 10%, 10%, 0.16) 0px 2px 4px 0px,
-    hsla(276, 10%, 10%, 0.32) 0px 2px 16px 0px;
+  --shadow-custom: var(--shadow-custom);
+  --shadow-toast: var(--shadow-toast);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Disable horizontal scrolling */
 }
