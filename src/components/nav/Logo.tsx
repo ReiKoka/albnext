@@ -6,11 +6,7 @@ import DarkModeLogo from "../../assets/images/favicon_1_dark_mode.svg?react";
 function Logo() {
   const themeContext = use(ThemeContext);
 
-  if (!themeContext) {
-    throw new Error("ThemeContext must be used within a ThemeProvider");
-  }
-
-  const { theme } = themeContext;
+  const theme = themeContext?.theme;
 
   return (
     <div>

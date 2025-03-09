@@ -7,8 +7,6 @@ import { NavHeightProvider } from "./context/NavHeightContext";
 const hostname = window.location.hostname;
 const isAdmin = hostname.startsWith("admin");
 
-console.log(hostname, isAdmin);
-
 const router = createBrowserRouter([
   {
     path: "/",
