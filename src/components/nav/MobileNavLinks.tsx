@@ -22,6 +22,7 @@ function MobileNavLinks({ isOpen, setIsOpen }: MobileNavLinksProps) {
   useOnClickOutside(mobileNavRef as React.RefObject<HTMLElement>, () =>
     setIsOpen(false),
   );
+  
   return (
     <div
       ref={mobileNavRef}

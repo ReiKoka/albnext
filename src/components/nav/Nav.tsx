@@ -2,7 +2,7 @@ import { HiBars3 } from "react-icons/hi2";
 import Button from "../ui/Button";
 import Logo from "./Logo";
 import ThemeToggle from "../ui/ThemeToggle";
-import { Ref, use, useState } from "react";
+import { Ref, use } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import MobileNavLinks from "./MobileNavLinks";
 import { MobileNavContext } from "../../context/MobileNavContext";
@@ -38,7 +38,10 @@ function Nav({ navRef }: NavProps) {
             />
           </Button>
         )}
-        <MobileNavLinks isOpen={isOpen ?? false} setIsOpen={setIsOpen ?? (() => {})} />
+        <MobileNavLinks
+          isOpen={isOpen ?? false}
+          setIsOpen={setIsOpen ?? (() => {})}
+        />
       </div>
     </div>
   );
