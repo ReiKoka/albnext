@@ -1,5 +1,6 @@
-import { ElementType } from "react";
+import { ElementType, use } from "react";
 import { NavLink } from "react-router";
+import { MobileNavContext } from "../../context/MobileNavContext";
 
 type MobileNavSingleLinkProps = {
   route: string;
@@ -7,12 +8,14 @@ type MobileNavSingleLinkProps = {
   icon: ElementType;
 };
 
-function MobileNavSingleLink({
-  route,
-  linkTitle,
-  icon: Icon,
-}: MobileNavSingleLinkProps) {
-  const handleClick = () => {};
+//prettier-ignore
+function MobileNavSingleLink({ route, linkTitle, icon: Icon}: MobileNavSingleLinkProps) {
+  const mobileNavContext = use(MobileNavContext);
+  const setIsOpen = mobileNavContext?.setIsOpen
+
+  const handleClick = () => {
+    if(setIsOpen) setIsOpen(false)
+  };
 
   return (
     <li className="border-border border-b py-4 last:border-0">
