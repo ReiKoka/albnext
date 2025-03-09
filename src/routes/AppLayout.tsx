@@ -1,22 +1,26 @@
 import { use } from "react";
 import Nav from "../components/nav/Nav";
 import { NavHeightContext } from "../context/NavHeightContext";
-import Home from "../components/main/Home";
+
+import { Outlet } from "react-router";
+import { MobileNavContext } from "../context/MobileNavContext";
 
 function AppLayout() {
   const navContext = use(NavHeightContext);
+  const navRef = navContext?.navRef;
 
-  if (!navContext) {
-    throw new Error("NavHeightContext must be used within a NavHeightProvider");
-  }
-
-  const { navRef, navHeight } = navContext;
+  const mobileNavContext = use(MobileNavContext);
+  const isOpen = mobileNavContext?.isOpen;
 
   return (
     <div className="mx-auto h-auto min-h-screen w-dvw max-w-[2000px]">
-      <Nav navRef={navRef} />
-      <Home navHeight={navHeight} />
-      <h1></h1>
+      <div
+        className={`fixed inset-0 z-10 bg-logo/20 backdrop-blur-sm transition-opacity duration-700 ${
+          isOpen ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+      />
+      {navRef && <Nav navRef={navRef} />}
+      <Outlet />
     </div>
   );
 }

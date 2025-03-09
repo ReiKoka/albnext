@@ -23,7 +23,7 @@ export const NavHeightProvider = ({ children }: { children: ReactNode }) => {
     updateNavHeight();
     window.addEventListener("resize", updateNavHeight);
 
-    console.log(navHeight)
+    console.log(navHeight);
 
     return () => window.removeEventListener("resize", updateNavHeight);
   }, [navHeight]);

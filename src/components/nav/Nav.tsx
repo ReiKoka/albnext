@@ -2,9 +2,10 @@ import { HiBars3 } from "react-icons/hi2";
 import Button from "../ui/Button";
 import Logo from "./Logo";
 import ThemeToggle from "../ui/ThemeToggle";
-import { Ref, useState } from "react";
+import { Ref, use, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import MobileNavLinks from "./MobileNavLinks";
+import { MobileNavContext } from "../../context/MobileNavContext";
 
 type NavProps = {
   navRef: Ref<HTMLDivElement> | null;
@@ -13,7 +14,9 @@ type NavProps = {
 function Nav({ navRef }: NavProps) {
   const matches = useMediaQuery("(min-width: 768px)");
 
-  const [isOpen, setIsOpen] = useState(false);
+  const mobileNavContext = use(MobileNavContext);
+  const isOpen = mobileNavContext?.isOpen;
+  const setIsOpen = mobileNavContext?.setIsOpen;
 
   return (
     <div
@@ -27,7 +30,7 @@ function Nav({ navRef }: NavProps) {
           <Button
             variant="icon"
             className="group border-0 p-0 hover:translate-0"
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsOpen && setIsOpen(true)}
           >
             <HiBars3
               size={24}
@@ -35,7 +38,7 @@ function Nav({ navRef }: NavProps) {
             />
           </Button>
         )}
-        <MobileNavLinks isOpen={isOpen} setIsOpen={setIsOpen} />
+        <MobileNavLinks isOpen={isOpen ?? false} setIsOpen={setIsOpen ?? (() => {})} />
       </div>
     </div>
   );
