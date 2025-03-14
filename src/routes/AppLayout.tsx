@@ -1,9 +1,11 @@
 import { Outlet } from "react-router";
 import Nav from "../components/nav/Nav";
 import useMobileNav from "../hooks/useMobileNav";
+import useNav from "../hooks/useNav";
 
 function AppLayout() {
   const { isOpen } = useMobileNav();
+  const { navHeight, navRef } = useNav();
 
   return (
     <div className="mx-auto h-dvh min-h-dvh w-full max-w-[2000px]">
@@ -12,9 +14,13 @@ function AppLayout() {
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         } transition-opacity duration-700`}
       ></div>
+
       <div className="flex h-full flex-col">
-        <Nav />
-        <div className="grow">
+        <Nav navRef={navRef} />
+        <div
+          className="grow"
+          style={{ height: `calc(100dvh - ${navHeight}px)` }}
+        >
           <Outlet />
         </div>
       </div>
