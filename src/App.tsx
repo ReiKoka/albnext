@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import AppLayout from "./routes/AppLayout";
-import Login from "./routes/Login";
+
 import { ThemeProvider } from "./context/ThemeContext";
 import { NavHeightProvider } from "./context/NavHeightContext";
 import { MobileNavProvider } from "./context/MobileNavContext";
+
+import AppLayout from "./routes/AppLayout";
+import Login from "./routes/Login";
 import WhyAlbania from "./routes/WhyAlbania";
 import LandingPage from "./routes/LandingPage";
 

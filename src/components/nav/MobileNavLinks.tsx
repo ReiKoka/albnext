@@ -1,17 +1,12 @@
-import {
-  HiOutlineHome,
-  HiOutlineInformationCircle,
-  HiOutlineQuestionMarkCircle,
-  HiXMark,
-} from "react-icons/hi2";
+import { useRef } from "react";
+import { IconType } from "react-icons";
+import { HiXMark } from "react-icons/hi2";
+import { useOnClickOutside } from "usehooks-ts";
 
+import { navigationLinks } from "../../utils/constants";
 import BigLogo from "./BigLogo";
 import Button from "../ui/Button";
 import MobileNavSingleLink from "./MobileNavSingleLink";
-import { useRef } from "react";
-import { useOnClickOutside } from "usehooks-ts";
-import { navigationLinks } from "../../utils/constants";
-import { IconType } from "react-icons";
 
 type MobileNavLinksProps = {
   isOpen: boolean;
