@@ -1,10 +1,8 @@
 import { Outlet } from "react-router";
 import Nav from "../components/nav/Nav";
-import useNav from "../hooks/useNav";
 import useMobileNav from "../hooks/useMobileNav";
 
 function AppLayout() {
-  const { navRef } = useNav();
   const { isOpen } = useMobileNav();
 
   return (
@@ -15,9 +13,8 @@ function AppLayout() {
         } transition-opacity duration-700`}
       ></div>
       <div className="flex h-full flex-col">
-        {navRef && <Nav navRef={navRef} />}
+        <Nav />
         <div className="grow">
-          {" "}
           <Outlet />
         </div>
       </div>

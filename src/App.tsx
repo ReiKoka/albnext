@@ -1,7 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-
 import { ThemeProvider } from "./context/ThemeContext";
-import { NavHeightProvider } from "./context/NavHeightContext";
 import { MobileNavProvider } from "./context/MobileNavContext";
 
 import AppLayout from "./routes/AppLayout";
@@ -32,11 +30,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ThemeProvider>
-      <NavHeightProvider>
-        <MobileNavProvider>
-          <RouterProvider router={router} />
-        </MobileNavProvider>
-      </NavHeightProvider>
+      <MobileNavProvider>
+        <RouterProvider router={router} />
+      </MobileNavProvider>
     </ThemeProvider>
   );
 }
