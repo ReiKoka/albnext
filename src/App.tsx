@@ -3,9 +3,9 @@ import AppLayout from "./routes/AppLayout";
 import Login from "./routes/Login";
 import { ThemeProvider } from "./context/ThemeContext";
 import { NavHeightProvider } from "./context/NavHeightContext";
+import { MobileNavProvider } from "./context/MobileNavContext";
 import WhyAlbania from "./routes/WhyAlbania";
 import LandingPage from "./routes/LandingPage";
-import { MobileNavProvider } from "./context/MobileNavContext";
 
 const hostname = window.location.hostname;
 const isAdmin = hostname.startsWith("admin");

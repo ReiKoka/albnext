@@ -26,7 +26,7 @@ function MobileNavLinks({ isOpen, setIsOpen }: MobileNavLinksProps) {
   return (
     <div
       ref={mobileNavRef}
-      className={` ${isOpen ? "translate-x-0] visible opacity-100" : "invisible -translate-x-[100%] opacity-0"} animate-fade-left animate-once animate-ease-out bg-background fixed top-0 left-0 h-full w-[90%] rounded-r-2xl p-6 duration-700`}
+      className={` ${isOpen ? "translate-x-0 visible opacity-100" : "invisible -translate-x-[100%] opacity-0"} animate-fade-left animate-once animate-ease-out bg-background fixed top-0 left-0 h-full w-[90%] rounded-r-2xl p-6 duration-700`}
     >
       <div className="mb-15 flex items-center justify-between">
         <BigLogo />

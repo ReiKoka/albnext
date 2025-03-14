@@ -8,13 +8,13 @@ function Home({ navHeight }: { navHeight: number }) {
       style={{ height: `calc(100dvh - ${navHeight}px)` }}
     >
       <div className="flex h-full flex-col gap-6 p-3">
-        <h1 className="font-primary text-background dark:text-foreground mt-auto w-full text-center text-3xl leading-10 font-bold tracking-wide sm:text-3xl md:text-4xl lg:text-5xl">
+        <h1 className="font-primary text-background dark:text-foreground mt-auto w-full text-center text-3xl leading-10 font-bold tracking-wide sm:text-3xl md:text-4xl lg:text-5xl lg:mb-6 xl:mb-10">
           Your trusted gateway to Albania
         </h1>
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:gap-8 lg:mb-10 xl:mb-24">
           <Button
             variant="outline"
-            className="font-primary dark:text-foreground dark:border-foreground border-background text-background flex w-full items-center justify-center border-2 text-sm"
+            className="font-primary dark:text-foreground dark:border-foreground border-background text-background flex w-full items-center max-h-40 justify-center border-2 text-sm sm:w-fit"
           >
             <HiOutlineBriefcase
               size={20}
@@ -26,7 +26,7 @@ function Home({ navHeight }: { navHeight: number }) {
 
           <Button
             variant="outline"
-            className="font-primary dark:text-foreground dark:border-foreground border-background text-background flex w-full items-center justify-center border-2 text-sm"
+            className="font-primary dark:text-foreground dark:border-foreground border-background text-background flex w-full items-center justify-center border-2 text-sm sm:w-fit"
           >
             <HiOutlineHome
               size={20}

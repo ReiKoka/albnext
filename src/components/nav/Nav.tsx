@@ -2,10 +2,11 @@ import { HiBars3 } from "react-icons/hi2";
 import Button from "../ui/Button";
 import Logo from "./Logo";
 import ThemeToggle from "../ui/ThemeToggle";
-import { Ref, use } from "react";
+import { Ref } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import MobileNavLinks from "./MobileNavLinks";
-import { MobileNavContext } from "../../context/MobileNavContext";
+import useMobileNav from "../../hooks/useMobileNav";
+import WebNav from "./WebNav";
 
 type NavProps = {
   navRef: Ref<HTMLDivElement> | null;
@@ -13,10 +14,7 @@ type NavProps = {
 
 function Nav({ navRef }: NavProps) {
   const matches = useMediaQuery("(min-width: 768px)");
-
-  const mobileNavContext = use(MobileNavContext);
-  const isOpen = mobileNavContext?.isOpen;
-  const setIsOpen = mobileNavContext?.setIsOpen;
+  const { isOpen, setIsOpen } = useMobileNav();
 
   return (
     <div
@@ -24,6 +22,7 @@ function Nav({ navRef }: NavProps) {
       className="bg-background sticky top-0 left-0 z-50 flex w-full items-center justify-between p-5 md:p-6"
     >
       <Logo />
+      {matches && <WebNav />}
       <div className="flex items-center gap-4">
         <ThemeToggle />
         {!matches && (
