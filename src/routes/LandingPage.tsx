@@ -2,7 +2,7 @@ import HeroSection from "../components/main/Home/HeroSection";
 
 function LandingPage() {
   return (
-    <div>
+    <div className="h-full">
       <HeroSection />
     </div>)
 }

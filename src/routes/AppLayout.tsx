@@ -8,14 +8,19 @@ function AppLayout() {
   const { isOpen } = useMobileNav();
 
   return (
-    <div className="mx-auto h-auto min-h-screen w-dvw max-w-[2000px]">
+    <div className="mx-auto h-dvh min-h-dvh w-dvw max-w-[2000px]">
       <div
         className={`bg-logo/20 fixed inset-0 z-10 backdrop-blur-sm ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         } transition-opacity duration-700`}
-      />
-      {navRef && <Nav navRef={navRef} />}
-      <Outlet />
+      ></div>
+      <div className="flex h-full flex-col">
+        {navRef && <Nav navRef={navRef} />}
+        <div className="grow">
+          {" "}
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }
