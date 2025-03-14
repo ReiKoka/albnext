@@ -1,13 +1,9 @@
-import Home from "../components/main/Home";
-import useNav from "../hooks/useNav";
+import HeroSection from "../components/main/Home/HeroSection";
 
 function LandingPage() {
-  const { navHeight } = useNav();
-
-  //prettier-ignore
   return (
     <div>
-      {navHeight && <Home navHeight={navHeight} />}
+      <HeroSection />
     </div>)
 }
 

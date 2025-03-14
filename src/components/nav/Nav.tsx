@@ -7,6 +7,7 @@ import { useMediaQuery } from "usehooks-ts";
 import MobileNavLinks from "./MobileNavLinks";
 import useMobileNav from "../../hooks/useMobileNav";
 import WebNav from "./WebNav";
+import HamburgerMenu from "../ui/HamburgerMenu";
 
 type NavProps = {
   navRef: Ref<HTMLDivElement> | null;
@@ -14,7 +15,6 @@ type NavProps = {
 
 function Nav({ navRef }: NavProps) {
   const matches = useMediaQuery("(min-width: 768px)");
-  const { isOpen, setIsOpen } = useMobileNav();
 
   return (
     <div
@@ -25,22 +25,7 @@ function Nav({ navRef }: NavProps) {
       {matches && <WebNav />}
       <div className="flex items-center gap-4">
         <ThemeToggle />
-        {!matches && (
-          <Button
-            variant="icon"
-            className="group border-0 p-0 hover:translate-0"
-            onClick={() => setIsOpen && setIsOpen(true)}
-          >
-            <HiBars3
-              size={24}
-              className="group-hover:fill-primary fill-foreground"
-            />
-          </Button>
-        )}
-        <MobileNavLinks
-          isOpen={isOpen ?? false}
-          setIsOpen={setIsOpen ?? (() => {})}
-        />
+        {!matches && <HamburgerMenu />}
       </div>
     </div>
   );

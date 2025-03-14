@@ -1,17 +1,16 @@
-import { ElementType, use } from "react";
 import { NavLink } from "react-router";
-import { MobileNavContext } from "../../context/MobileNavContext";
+import { IconType } from "react-icons";
+import useMobileNav from "../../hooks/useMobileNav";
 
 type MobileNavSingleLinkProps = {
   route: string;
   linkTitle: string;
-  icon: ElementType;
+  icon: IconType;
 };
 
 //prettier-ignore
 function MobileNavSingleLink({ route, linkTitle, icon: Icon}: MobileNavSingleLinkProps) {
-  const mobileNavContext = use(MobileNavContext);
-  const setIsOpen = mobileNavContext?.setIsOpen
+  const {setIsOpen} = useMobileNav() 
 
   const handleClick = () => {
     if(setIsOpen) setIsOpen(false)
@@ -24,8 +23,8 @@ function MobileNavSingleLink({ route, linkTitle, icon: Icon}: MobileNavSingleLin
         className="font-primary text-foreground flex items-center gap-4 text-xl leading-5 font-medium tracking-wide"
         onClick={handleClick}
       >
-        <Icon size={30} strokeWidth={1.2} />
-        <span>{linkTitle}</span>
+        <Icon size={30} strokeWidth={1.3} />
+        <span className="capitalize">{linkTitle}</span>
       </NavLink>
     </li>
   );
