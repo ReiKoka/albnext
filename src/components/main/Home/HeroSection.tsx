@@ -5,7 +5,7 @@ function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-full bg-[url('/hero-background.jpeg')] bg-cover bg-bottom bg-no-repeat"
+      className="relative w-full h-full max-h-full bg-[url('/hero-background.jpeg')] bg-cover bg-bottom bg-no-repeat"
       
     >
       <div className="flex h-full flex-col gap-6 p-3">
