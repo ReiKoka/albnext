@@ -1,11 +1,7 @@
-import { HiBars3 } from "react-icons/hi2";
-import Button from "../ui/Button";
 import Logo from "./Logo";
 import ThemeToggle from "../ui/ThemeToggle";
 import { Ref } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import MobileNavLinks from "./MobileNavLinks";
-import useMobileNav from "../../hooks/useMobileNav";
 import WebNav from "./WebNav";
 import HamburgerMenu from "../ui/HamburgerMenu";
 
