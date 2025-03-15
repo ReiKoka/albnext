@@ -1,7 +1,6 @@
 import useNav from "../../../hooks/useNav";
 import WhyAlbaniaSlider from "../../ui/WhyAlbaniaSlider";
 
-
 function WhyAlbaniaSection() {
   const { navHeight } = useNav();
 
@@ -22,7 +21,7 @@ function WhyAlbaniaSection() {
             </span>{" "}
             meets growth
           </h3>
-          <p className="font-primary mt-1 text-center text-[10px] leading-4 font-light text-wrap md:max-w-[600px] md:text-sm md:leading-5">
+          <p className="font-primary mt-1 text-justify w-[85dvw] px-4 text-xs leading-4 font-light text-wrap md:max-w-[600px] md:text-sm md:leading-5">
             Albania is becoming a high-potential destination for investors
             looking to tap into Southeast Europe’s emerging markets. With a
             rapidly modernizing infrastructure, competitive labor costs, and
