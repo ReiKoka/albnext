@@ -10,10 +10,13 @@ function WhyAlbaniaSlider() {
     slidesToScroll: 1,
     className: "center",
     centerPadding: "60px",
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
   };
 
   return (
-    <div className="mx-auto mt-auto max-w-[85dvw]">
+    <div className="mx-auto mt-auto max-w-[85dvw] h-[300px]">
       <Slider {...settings}>
         <div className="p-3">
           <div className="h-full w-full">
