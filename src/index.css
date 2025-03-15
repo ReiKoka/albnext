@@ -154,7 +154,3 @@ body {
   height: 100%;
   overflow-x: hidden; /* Disable horizontal scrolling */
 }
-
-.slick-slider {
-  margin-top: auto;
-}
