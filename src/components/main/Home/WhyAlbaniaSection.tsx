@@ -29,7 +29,7 @@ function WhyAlbaniaSection() {
             climate for ventures of all sizes.
           </p>
         </div>
-        <div className="grow pb-4">
+        <div className="grow flex flex-col pb-4">
           <WhyAlbaniaSlider />
         </div>
       </div>

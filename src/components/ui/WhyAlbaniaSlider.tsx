@@ -13,7 +13,7 @@ function WhyAlbaniaSlider() {
   };
 
   return (
-    <div className="mx-auto h-full max-w-[85dvw]">
+    <div className="mx-auto mt-auto h-full max-w-[85dvw]">
       <Slider {...settings}>
         <div className="p-3">
           <div className="h-full w-full">
