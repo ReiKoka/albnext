@@ -5,7 +5,7 @@ import useNav from "../hooks/useNav";
 
 function AppLayout() {
   const { isOpen } = useMobileNav();
-  const { navHeight, navRef } = useNav();
+  const { navRef } = useNav();
 
   return (
     <div className="mx-auto h-dvh min-h-dvh w-full max-w-[2000px]">
@@ -19,7 +19,6 @@ function AppLayout() {
         <Nav navRef={navRef} />
         <div
           className="grow"
-          style={{ height: `calc(100dvh - ${navHeight}px)` }}
         >
           <Outlet />
         </div>

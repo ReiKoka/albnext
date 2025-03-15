@@ -1,15 +1,17 @@
 import { HiOutlineBriefcase, HiOutlineHome } from "react-icons/hi2";
 import Button from "../../ui/Button";
+import useNav from "../../../hooks/useNav";
 
 function HeroSection() {
+  const { navHeight } = useNav();
 
   return (
     <section
-      className="relative w-full h-full max-h-full bg-[url('/hero-background.jpeg')] bg-cover bg-bottom bg-no-repeat"
-      
+      className="relative w-full bg-[url('/hero-background.jpeg')] bg-cover bg-bottom bg-no-repeat"
+      style={{ height: `calc(100dvh - ${navHeight}px)` }}
     >
       <div className="flex h-full flex-col gap-6 p-3">
-        <h1 className="font-primary text-background dark:text-foreground mt-auto w-full text-center text-3xl leading-10 font-bold tracking-wide sm:text-3xl md:text-4xl lg:mb-6 lg:text-5xl xl:mb-10">
+        <h1 className="font-primary text-background dark:text-foreground animate-fade-down animate-once animate-duration-1000 animate-delay-[300ms] animate-ease-out mt-auto w-full text-center text-3xl leading-10 font-bold tracking-wide sm:text-3xl md:text-4xl lg:mb-6 lg:text-5xl xl:mb-10">
           Your trusted gateway to Albania
         </h1>
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:gap-8 lg:mb-10 xl:mb-24">
