@@ -107,6 +107,9 @@
   --logo: hsl(0, 0%, 10%);
   --shadow-custom: hsla(211, 81%, 8%, 0.4) 0px 30px 90px;
   --shadow-toast: hsla(0, 0%, 39%, 0.5) 0px 2px 8px 0px;
+  --shadow-slide:
+    rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  --shadow-slide-2: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 
 .dark {
@@ -125,6 +128,9 @@
   --shadow-toast:
     hsla(211, 81%, 8%, 0.16) 0px 2px 4px 0px,
     hsla(211, 81%, 8%, 0.32) 0px 2px 16px 0px;
+  --shadow-slide:
+    hsla(211, 81%, 8%, 0.16) 0px 0px 5px 0px,
+    hsla(211, 81%, 8%, 0.32) 0px 0px 1px 0px;
 }
 
 @theme inline {
@@ -146,6 +152,10 @@
   --font-secondary: "Ogilvy Sans Serif", sans-serif;
   --shadow-custom: var(--shadow-custom);
   --shadow-toast: var(--shadow-toast);
+  --shadow-slide: var(--shadow-slide);
+  --shadow-slide-2: var(--shadow-slide-2);
+
+
 }
 
 html,
