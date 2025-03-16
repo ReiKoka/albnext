@@ -1,10 +1,9 @@
-// import WhyAlbaniaImg1 from "../../assets/images/why-albania-icon-1.svg?react";
 // import { useMediaQuery } from "usehooks-ts";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import SingleSlide from "./SingleSlide";
 import { SingleSlideType } from "../../utils/types";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+// import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 
 //prettier-ignore
 import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowButtons";
@@ -19,7 +18,7 @@ function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   //prettier-ignore
-  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
+  // const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
 
   //prettier-ignore
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick} = usePrevNextButtons(emblaApi);
@@ -40,13 +39,10 @@ function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
         </div>
       </div>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
+      <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+      <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
 
-        <div className="embla__dots">
+      {/* <div className="embla__dots">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
@@ -56,8 +52,7 @@ function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
               )}
             />
           ))}
-        </div>
-      </div>
+        </div> */}
     </section>
   );
 }

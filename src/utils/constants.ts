@@ -1,7 +1,7 @@
 //prettier-ignore
 import { HiOutlineArrowTrendingUp, HiOutlineHome, HiOutlineQuestionMarkCircle, HiOutlineServerStack} from "react-icons/hi2";
 import { NavigationLinkType, SingleSlideType } from "./types";
-import WhyAlbaniaImg1 from "../assets/images/why-albania-icon-1.svg?react";
+import bag from "../assets/images/discount-bag.json";
 
 export const navigationLinks: NavigationLinkType[] = [
   {
@@ -28,12 +28,12 @@ export const navigationLinks: NavigationLinkType[] = [
 
 export const sliderData: SingleSlideType[] = [
   {
-    icon: WhyAlbaniaImg1,
+    icon: bag,
     title: "Least tax burden country in Europe",
     text: "Whether you’re an high-growth scaling company, or an established multi-national, Albania is the ideal location for your business to grow. Our diverse talent-pool, world-class infrastructure and pro-business environment allows business to grow with ease.",
   },
   {
-    icon: WhyAlbaniaImg1,
+    icon: bag,
     title: "Least tax burden country in Europe",
     text: "Whether you’re an high-growth scaling company, or an established multi-national, Albania is the ideal location for your business to grow. Our diverse talent-pool, world-class infrastructure and pro-business environment allows business to grow with ease.",
   },

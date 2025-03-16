@@ -1,4 +1,3 @@
-import { ElementType } from "react";
 import { IconType } from "react-icons";
 
 export type Theme = "light" | "dark";
@@ -10,7 +9,7 @@ export type NavigationLinkType = {
 };
 
 export type SingleSlideType = {
-  icon: ElementType;
+  icon: object;
   title: string;
   text: string;
 };

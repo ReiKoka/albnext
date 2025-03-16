@@ -3,16 +3,17 @@
   --slide-height: 20rem;
   --slide-spacing: 2rem;
   --slide-size: 100%;
+  position: relative;
 }
 .embla__viewport {
   overflow: hidden;
-  padding: 16px;
+  padding: 0.5rem;
   width: 100%;
 }
 .embla__container {
   display: flex;
   touch-action: pan-x pinch-zoom;
-  margin-top: calc(var(--slide-spacing) * -1);
+
   height: calc(var(--slide-spacing) + var(--slide-height));
   flex-direction: column;
 }
@@ -20,24 +21,25 @@
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
   min-height: 0;
-  padding-top: var(--slide-spacing);
+  max-height: 350px;
+  padding-top: 1rem;
 }
 
 .embla__controls {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-content: space-between;
-  gap: 1.2rem;
-  margin-top: 1.8rem;
-}
-.embla__buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
 }
+
+.embla__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .embla__button {
-  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
@@ -48,15 +50,14 @@
   border: 0;
   padding: 0;
   margin: 0;
-  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 2rem;
+  height: 2rem;
   z-index: 1;
   border-radius: 50%;
-  color: var(--text-body);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
 }
 .embla__button:disabled {
   color: var(--detail-high-contrast);

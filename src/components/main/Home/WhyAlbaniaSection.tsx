@@ -16,7 +16,7 @@ function WhyAlbaniaSection() {
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Why invest in Albania
         </h1>
-        <div className="flex grow flex-col justify-between gap-16">
+        <div className="flex grow flex-col justify-between gap-12">
           <div className="flex flex-col gap-4">
             <h3 className="font-primary text-md px-10 text-center font-normal text-balance lg:text-lg">
               Where{" "}
@@ -33,7 +33,7 @@ function WhyAlbaniaSection() {
               climate for ventures of all sizes.
             </p>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <WhyAlbaniaSlider slides={sliderData} options={OPTIONS} />
           </div>
         </div>
