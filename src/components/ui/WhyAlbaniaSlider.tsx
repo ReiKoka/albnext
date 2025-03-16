@@ -1,43 +1,32 @@
 import Slider from "react-slick";
 import WhyAlbaniaImg1 from "../../assets/images/why-albania-icon-1.svg?react";
+import { useMediaQuery } from "usehooks-ts";
 
 function WhyAlbaniaSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    vertical: true,
-    className: "center",
-    centerMode: true,
-    centerPadding: "60px",
-    verticalSwiping: true,
-    adaptiveHeight: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const matchesMd = useMediaQuery("(min-width: 768px)");
+
+  console.log(matchesMd);
+
+  const settings = matchesMd
+    ? {
+        dots: true,
+        infinite: true,
+        className: "center",
+        centerMode: true,
+        slidesToScroll: 1,
+        centerPadding: "80px",
+      }
+    : {
+        dots: true,
+        infinite: true,
+        className: "center",
+        centerMode: true,
+        slidesToScroll: 1,
+        vertical: true,
+        verticalSwiping: true,
+        swipeToSlide: true,
+        centerPadding: "0px",
+      };
 
   return (
     <div className="mx-auto h-[250px] max-h-[250px] max-w-[85dvw]">
