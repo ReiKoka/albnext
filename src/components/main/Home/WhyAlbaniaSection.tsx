@@ -10,7 +10,7 @@ function WhyAlbaniaSection() {
   return (
     <section
       style={{ height: `calc(100dvh - ${navHeight}px)` }}
-      className="text-foreground bg-muted flex flex-col items-center gap-8 px-3 pt-8 pb-24 md:py-12 lg:py-16"
+      className="text-foreground bg-muted flex flex-col items-center gap-8 px-3 pt-8 pb-18 md:py-12 lg:py-16"
     >
       <div className="flex h-full flex-col gap-8">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
