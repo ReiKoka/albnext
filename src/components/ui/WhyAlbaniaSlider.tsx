@@ -1,79 +1,66 @@
-import Slider from "react-slick";
-import WhyAlbaniaImg1 from "../../assets/images/why-albania-icon-1.svg?react";
+// import WhyAlbaniaImg1 from "../../assets/images/why-albania-icon-1.svg?react";
 import { useMediaQuery } from "usehooks-ts";
+import useEmblaCarousel from "embla-carousel-react";
+import { EmblaOptionsType } from "embla-carousel";
+import SingleSlide from "./SingleSlide";
+import { SingleSlideType } from "../../utils/types";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 
-function WhyAlbaniaSlider() {
+//prettier-ignore
+import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowButtons";
+
+import "../../embla.css";
+
+type WhyAlbaniaSliderProps = {
+  slides: SingleSlideType[];
+  options?: EmblaOptionsType;
+};
+
+function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
   const matchesMd = useMediaQuery("(min-width: 768px)");
 
-  console.log(matchesMd);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  //prettier-ignore
+  const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
 
-  const settings = matchesMd
-    ? {
-        dots: true,
-        infinite: true,
-        className: "center",
-        centerMode: true,
-        slidesToScroll: 1,
-        centerPadding: "80px",
-      }
-    : {
-        dots: true,
-        infinite: true,
-        className: "center",
-        centerMode: true,
-        slidesToScroll: 1,
-        vertical: true,
-        verticalSwiping: true,
-        swipeToSlide: true,
-        centerPadding: "0px",
-      };
+  //prettier-ignore
+  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick} = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="mx-auto h-[250px] max-h-[250px] max-w-[85dvw]">
-      <Slider {...settings}>
-        <div className="p-3 focus-within:outline-0">
-          <div className="h-full w-full">
-            <div className="border-border shadow-toast focus-visible:ring-primary flex h-full flex-col rounded-xl border border-t-0 p-4 focus-visible:ring focus-visible:ring-offset-2 focus-visible:outline-0">
-              <div className="mx-auto flex aspect-square h-24 w-24 items-center justify-center rounded-xl bg-[url('/gradient-background.png')] bg-cover bg-center">
-                <WhyAlbaniaImg1 className="h-16 w-16" />
-              </div>
-              <div className="flex flex-col gap-2 rounded-b-xl">
-                <h2 className="text-foreground font-primary p-2 text-center text-base leading-6 font-bold">
-                  Least tax burden country in Europe
-                </h2>
-                <p className="font-primary px-2 pb-2 text-center text-xs">
-                  Whether you’re an high-growth scaling company, or an
-                  established multi-national, Albania is the ideal location for
-                  your business to grow. Our diverse talent-pool, world-class
-                  infrastructure and
-                </p>
-              </div>
+    <section className="embla">
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container ">
+          {slides.map((slide, index) => (
+            <div className="embla__slide" key={index}>
+              <SingleSlide
+                icon={slide.icon}
+                title={slide.title}
+                text={slide.text}
+              />
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="embla__controls">
+        <div className="embla__buttons">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
 
-        <div className="p-3 focus-within:outline-0">
-          <div className="h-full w-full">
-            <div className="border-border shadow-toast focus-visible:ring-primary flex flex-col rounded-xl border border-t-0 p-4 focus-visible:ring focus-visible:ring-offset-2 focus-visible:outline-0">
-              <div className="mx-auto flex aspect-square h-24 w-24 items-center justify-center rounded-xl bg-[url('/gradient-background.png')] bg-cover bg-center">
-                <WhyAlbaniaImg1 className="h-16 w-16" />
-              </div>
-              <div className="flex flex-col gap-2 rounded-b-xl">
-                <h2 className="text-foreground font-primary p-2 text-center text-base leading-6 font-bold">
-                  Least tax burden country in Europe
-                </h2>
-                <p className="font-primary px-2 pb-2 text-center text-xs">
-                  Whether you’re an high-growth scaling company, or an
-                  established multi-national, Albania is the ideal location for
-                  your business to grow. Our diverse talent-pool, world-class
-                  infrastructure and
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="embla__dots">
+          {scrollSnaps.map((_, index) => (
+            <DotButton
+              key={index}
+              onClick={() => onDotButtonClick(index)}
+              className={"embla__dot".concat(
+                index === selectedIndex ? "embla__dot--selected" : "",
+              )}
+            />
+          ))}
         </div>
-      </Slider>
-    </div>
+      </div>
+    </section>
   );
 }
 
