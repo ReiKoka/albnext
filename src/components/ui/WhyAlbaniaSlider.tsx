@@ -1,5 +1,5 @@
 // import WhyAlbaniaImg1 from "../../assets/images/why-albania-icon-1.svg?react";
-import { useMediaQuery } from "usehooks-ts";
+// import { useMediaQuery } from "usehooks-ts";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import SingleSlide from "./SingleSlide";
@@ -17,7 +17,7 @@ type WhyAlbaniaSliderProps = {
 };
 
 function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
+  // const matchesMd = useMediaQuery("(min-width: 768px)");
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   //prettier-ignore
@@ -29,7 +29,7 @@ function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
   return (
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container ">
+        <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
               <SingleSlide
