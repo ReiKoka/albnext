@@ -9,8 +9,6 @@ import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 //prettier-ignore
 import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowButtons";
 
-import "../../embla.css";
-
 type WhyAlbaniaSliderProps = {
   slides: SingleSlideType[];
   options?: EmblaOptionsType;
