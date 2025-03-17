@@ -17,7 +17,6 @@
   touch-action: pan-x pinch-zoom;
   height: calc(var(--slide-spacing) + var(--slide-height));
   flex-direction: column;
-  gap: 2rem;
 }
 
 .embla__slide {
@@ -25,6 +24,7 @@
   flex: 0 0 var(--slide-size);
   min-height: 0;
   height: full;
+  margin-block: 1rem;
 }
 
 .embla__controls {
