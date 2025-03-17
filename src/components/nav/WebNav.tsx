@@ -6,7 +6,7 @@ function WebNav() {
     <ul className="font-primary flex gap-6">
       {navigationLinks.map((link, index) => (
         <li key={index}>
-          <NavLink to={link.path} className="capitalize">
+          <NavLink to={link.path} className="capitalize text-foreground">
             {link.text}
           </NavLink>
         </li>
