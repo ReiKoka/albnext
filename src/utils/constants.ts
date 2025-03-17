@@ -37,4 +37,9 @@ export const sliderData: SingleSlideType[] = [
     title: "Least tax burden country in Europe",
     text: "Whether you’re an high-growth scaling company, or an established multi-national, Albania is the ideal location for your business to grow. Our diverse talent-pool, world-class infrastructure and pro-business environment allows business to grow with ease.",
   },
+  {
+    icon: bag,
+    title: "Least tax burden country in Europe",
+    text: "Whether you’re an high-growth scaling company, or an established multi-national, Albania is the ideal location for your business to grow. Our diverse talent-pool, world-class infrastructure and pro-business environment allows business to grow with ease.",
+  },
 ];

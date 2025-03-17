@@ -1,11 +1,16 @@
 import { EmblaOptionsType } from "embla-carousel";
 import useNav from "../../../hooks/useNav";
-import WhyAlbaniaSlider from "../../ui/mobile/WhyAlbaniaSlider";
 import { sliderData } from "../../../utils/constants";
+import WhyAlbaniaMobileSlider from "../../ui/mobile/WhyAlbaniaMobileSlider";
+import { useMediaQuery } from "usehooks-ts";
+import WhyAlbaniaWebSlider from "../../ui/web/WhyAlbaniaWebSlider";
 
 function WhyAlbaniaSection() {
   const { navHeight } = useNav();
-  const OPTIONS: EmblaOptionsType = { axis: "y", loop: true };
+  const matches = useMediaQuery("(min-width: 768px)");
+
+  const WEB_OPTIONS: EmblaOptionsType = { loop: true,  };
+  const MOBILE_OPTIONS: EmblaOptionsType = { axis: "y", loop: true };
 
   return (
     <section
@@ -34,7 +39,14 @@ function WhyAlbaniaSection() {
             </p>
           </div>
           <div className="flex flex-col">
-            <WhyAlbaniaSlider slides={sliderData} options={OPTIONS} />
+            {matches ? (
+              <WhyAlbaniaWebSlider slides={sliderData} options={WEB_OPTIONS} />
+            ) : (
+              <WhyAlbaniaMobileSlider
+                slides={sliderData}
+                options={MOBILE_OPTIONS}
+              />
+            )}
           </div>
         </div>
       </div>
