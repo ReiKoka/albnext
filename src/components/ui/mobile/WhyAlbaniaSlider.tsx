@@ -1,9 +1,8 @@
-// import { useMediaQuery } from "usehooks-ts";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
-import SingleSlide from "./SingleSlide";
-import { SingleSlideType } from "../../utils/types";
-// import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import SingleSlide from "../SingleSlide";
+import { SingleSlideType } from "../../../utils/types";
+
 
 //prettier-ignore
 import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowButtons";
@@ -14,12 +13,7 @@ type WhyAlbaniaSliderProps = {
 };
 
 function WhyAlbaniaSlider({ slides, options }: WhyAlbaniaSliderProps) {
-  // const matchesMd = useMediaQuery("(min-width: 768px)");
-
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  //prettier-ignore
-  // const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
-
   //prettier-ignore
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick} = usePrevNextButtons(emblaApi);
 

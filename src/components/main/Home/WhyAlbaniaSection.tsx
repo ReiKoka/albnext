@@ -1,11 +1,11 @@
 import { EmblaOptionsType } from "embla-carousel";
 import useNav from "../../../hooks/useNav";
-import WhyAlbaniaSlider from "../../ui/WhyAlbaniaSlider";
+import WhyAlbaniaSlider from "../../ui/mobile/WhyAlbaniaSlider";
 import { sliderData } from "../../../utils/constants";
 
 function WhyAlbaniaSection() {
   const { navHeight } = useNav();
-  const OPTIONS: EmblaOptionsType = { axis: "y" };
+  const OPTIONS: EmblaOptionsType = { axis: "y", loop: true };
 
   return (
     <section
@@ -33,7 +33,7 @@ function WhyAlbaniaSection() {
               climate for ventures of all sizes.
             </p>
           </div>
-          <div className="flex flex-col ">
+          <div className="flex flex-col">
             <WhyAlbaniaSlider slides={sliderData} options={OPTIONS} />
           </div>
         </div>
