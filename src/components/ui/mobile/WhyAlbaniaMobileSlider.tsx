@@ -2,7 +2,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import { SingleSlideType } from "../../../utils/types";
 
-
 //prettier-ignore
 import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowButtons";
 import SingleSlideMobile from "./SingleSlideMobile";
@@ -12,13 +11,16 @@ type WhyAlbaniaMobileSliderProps = {
   options?: EmblaOptionsType;
 };
 
-function WhyAlbaniaMobileSlider({ slides, options }: WhyAlbaniaMobileSliderProps) {
+function WhyAlbaniaMobileSlider({
+  slides,
+  options,
+}: WhyAlbaniaMobileSliderProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   //prettier-ignore
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick} = usePrevNextButtons(emblaApi);
 
   return (
-<section className="embla__mobile--wrapper">
+    <section className="embla__mobile--wrapper">
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
@@ -33,10 +35,10 @@ function WhyAlbaniaMobileSlider({ slides, options }: WhyAlbaniaMobileSliderProps
             ))}
           </div>
         </div>
-  
+
         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-  
+
         {/* <div className="embla__dots">
             {scrollSnaps.map((_, index) => (
               <DotButton
@@ -49,7 +51,7 @@ function WhyAlbaniaMobileSlider({ slides, options }: WhyAlbaniaMobileSliderProps
             ))}
           </div> */}
       </div>
-</section>
+    </section>
   );
 }
 
