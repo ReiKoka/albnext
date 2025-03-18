@@ -8,6 +8,7 @@
 .embla__web--wrapper .embla__viewport {
   overflow: hidden;
   padding: 1rem;
+  position: relative;
 }
 .embla__web--wrapper .embla__container {
   display: flex;
@@ -145,3 +146,25 @@
     }
   }, [emblaApi, updateSlideStyles]);
 */
+
+.left-rectangle {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100px;
+  height: 60%;
+  background: transparent;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.right-rectangle {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 100px;
+  height: 60%;
+  background: transparent;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}

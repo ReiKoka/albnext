@@ -122,7 +122,12 @@ function WhyAlbaniaWebSlider({ slides, options, plugins }: WhyAlbaniaWebSliderPr
               </div>
             ))}
           </div>
+          <div className="left-rectangle"></div>
+          <div className="right-rectangle"></div>
         </div>
+
+        
+
 
         <div className="embla__controls">
           <div className="embla__buttons">
