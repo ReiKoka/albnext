@@ -9,20 +9,22 @@ import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowB
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import { SingleSlideType } from "../../../utils/types";
 import SingleSlideWeb from "./SingleSlideWeb";
+import { AutoplayType } from "embla-carousel-autoplay";
 
 const TWEEN_FACTOR_BASE = 0.52;
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
-type PropType = {
+type WhyAlbaniaWebSliderPropsType = {
   slides: SingleSlideType[];
-  options?: EmblaOptionsType;
+  options: EmblaOptionsType;
+  plugins: AutoplayType[];
 };
 
-const WhyAlbaniaWebSlider: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+//prettier-ignore
+function WhyAlbaniaWebSlider({ slides, options, plugins }: WhyAlbaniaWebSliderPropsType) {  
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
 
@@ -149,6 +151,6 @@ const WhyAlbaniaWebSlider: React.FC<PropType> = (props) => {
       </div>
     </section>
   );
-};
+}
 
 export default WhyAlbaniaWebSlider;

@@ -4,13 +4,16 @@ import { sliderData } from "../../../utils/constants";
 import WhyAlbaniaMobileSlider from "../../ui/mobile/WhyAlbaniaMobileSlider";
 import { useMediaQuery } from "usehooks-ts";
 import WhyAlbaniaWebSlider from "../../ui/web/WhyAlbaniaWebSlider";
+import Autoplay from "embla-carousel-autoplay";
 
 function WhyAlbaniaSection() {
   const { navHeight } = useNav();
   const matches = useMediaQuery("(min-width: 768px)");
 
-  const WEB_OPTIONS: EmblaOptionsType = { loop: true,  };
+  const WEB_OPTIONS: EmblaOptionsType = { loop: true };
   const MOBILE_OPTIONS: EmblaOptionsType = { axis: "y", loop: true };
+
+  const PLUGINS = [Autoplay({ delay: 4000, stopOnInteraction: true, playOnInit: true, })];
 
   return (
     <section
@@ -40,11 +43,12 @@ function WhyAlbaniaSection() {
           </div>
           <div className="flex flex-col">
             {matches ? (
-              <WhyAlbaniaWebSlider slides={sliderData} options={WEB_OPTIONS} />
+              <WhyAlbaniaWebSlider slides={sliderData} options={WEB_OPTIONS} plugins={PLUGINS} />
             ) : (
               <WhyAlbaniaMobileSlider
                 slides={sliderData}
                 options={MOBILE_OPTIONS}
+                plugins={PLUGINS}
               />
             )}
           </div>

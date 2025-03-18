@@ -5,17 +5,17 @@ import { SingleSlideType } from "../../../utils/types";
 //prettier-ignore
 import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowButtons";
 import SingleSlideMobile from "./SingleSlideMobile";
+import { AutoplayType } from "embla-carousel-autoplay";
 
-type WhyAlbaniaMobileSliderProps = {
+type WhyAlbaniaMobileSliderPropsType = {
   slides: SingleSlideType[];
-  options?: EmblaOptionsType;
+  options: EmblaOptionsType;
+  plugins: AutoplayType[];
 };
 
-function WhyAlbaniaMobileSlider({
-  slides,
-  options,
-}: WhyAlbaniaMobileSliderProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+//prettier-ignore
+function WhyAlbaniaMobileSlider({ slides, options, plugins}: WhyAlbaniaMobileSliderPropsType) {
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
   //prettier-ignore
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick} = usePrevNextButtons(emblaApi);
 
