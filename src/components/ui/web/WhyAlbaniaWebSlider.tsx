@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef } from "react";
-
+import { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+
 //prettier-ignore
 import { EmblaCarouselType, EmblaEventType, EmblaOptionsType} from "embla-carousel";
 //prettier-ignore
@@ -8,10 +8,10 @@ import { NextButton, PrevButton, usePrevNextButtons} from "./EmblaCarouselArrowB
 
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import { SingleSlideType } from "../../../utils/types";
-import SingleSlideWeb from "./SingleSlideWeb";
 import { AutoplayType } from "embla-carousel-autoplay";
+import SingleSlideWeb from "./SingleSlideWeb";
 
-const TWEEN_FACTOR_BASE = 0.52;
+const TWEEN_FACTOR_BASE = 0.5;
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);

@@ -13,7 +13,14 @@ function WhyAlbaniaSection() {
   const WEB_OPTIONS: EmblaOptionsType = { loop: true };
   const MOBILE_OPTIONS: EmblaOptionsType = { axis: "y", loop: true };
 
-  const PLUGINS = [Autoplay({ delay: 4000, stopOnInteraction: true, playOnInit: true, })];
+  const PLUGINS = [
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: true,
+      playOnInit: true,
+      // stopOnMouseEnter: true,
+    }),
+  ];
 
   return (
     <section
@@ -43,7 +50,11 @@ function WhyAlbaniaSection() {
           </div>
           <div className="flex flex-col">
             {matches ? (
-              <WhyAlbaniaWebSlider slides={sliderData} options={WEB_OPTIONS} plugins={PLUGINS} />
+              <WhyAlbaniaWebSlider
+                slides={sliderData}
+                options={WEB_OPTIONS}
+                plugins={PLUGINS}
+              />
             ) : (
               <WhyAlbaniaMobileSlider
                 slides={sliderData}
