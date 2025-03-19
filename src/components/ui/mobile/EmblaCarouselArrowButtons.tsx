@@ -1,10 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, {
-  ComponentPropsWithRef,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+//prettier-ignore
+import React, { ComponentPropsWithRef, useCallback, useEffect, useState} from "react";
 import { EmblaCarouselType } from "embla-carousel";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
 
