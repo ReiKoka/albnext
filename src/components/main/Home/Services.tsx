@@ -10,6 +10,7 @@ function Services() {
       flex: "flex-2",
       text: "real estate",
       imageUrl: "/services-1.png",
+      marginTop: "mt-3",
     },
     {
       id: 2,
@@ -40,6 +41,7 @@ function Services() {
               text={service.text}
               flex={service.flex}
               imageUrl={service.imageUrl}
+              marginTop={service.marginTop}
             />
           ))}
         </div>
