@@ -36,7 +36,6 @@
   grid-template-columns: auto 1fr;
   justify-content: space-between;
   gap: 1.2rem;
-  margin-top: 1.8rem;
 }
 .embla__web--wrapper .embla__buttons {
   display: grid;
