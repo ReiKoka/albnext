@@ -10,7 +10,6 @@ function Services() {
       flex: "flex-2",
       text: "real estate",
       imageUrl: "/services-1.png",
-      marginTop: "mt-3",
     },
     {
       id: 2,
@@ -35,15 +34,24 @@ function Services() {
           Our Services
         </h1>
         <div className="flex w-full grow flex-col items-center justify-between gap-6">
-          {servicesData.map((service) => (
-            <SinglePhoto
-              key={service.id}
-              text={service.text}
-              flex={service.flex}
-              imageUrl={service.imageUrl}
-              marginTop={service.marginTop}
-            />
-          ))}
+          <SinglePhoto
+            flex="flex-2"
+            text="real estate"
+            className=""
+            imageUrl="/services-1.png"
+          />
+
+          <SinglePhoto
+            flex="flex-1"
+            text="marketing"
+            imageUrl="/services-2.jpeg"
+          />
+
+          <SinglePhoto
+            flex="flex-1"
+            text="Business Setup"
+            imageUrl="/services-3.jpeg"
+          />
         </div>
       </div>
     </section>
