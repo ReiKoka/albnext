@@ -13,20 +13,26 @@ function Services() {
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Our Services
         </h1>
-        <div className="flex w-full grow flex-col items-center justify-between gap-6">
+        <div className="flex w-full grow flex-col items-center justify-between gap-6 md:grid md:grid-cols-2 md:grid-rows-[10px_1fr_1fr_10px]">
           <SinglePhoto
             flex={2}
             text="real estate"
-            className=""
             imageUrl="/services-1.png"
+            divClassName="md:row-start-1 md:row-end-5 h-full"
           />
 
-          <SinglePhoto flex={1} text="marketing" imageUrl="/services-2.jpeg" />
+          <SinglePhoto
+            flex={1}
+            text="marketing"
+            imageUrl="/services-2.jpeg"
+            divClassName="md:h-full md:row-start-2"
+          />
 
           <SinglePhoto
             flex={1}
             text="Business Setup"
             imageUrl="/services-3.jpeg"
+            divClassName="md:h-full md:pb-8 md:row-start-3"
           />
         </div>
       </div>
