@@ -5,7 +5,7 @@ type SinglePhotoProps = {
   text: string;
   imageUrl: string;
   className?: string;
-  flex: string;
+  flex: number;
 };
 
 function SinglePhoto({ text, imageUrl, className, flex }: SinglePhotoProps) {
@@ -15,7 +15,7 @@ function SinglePhoto({ text, imageUrl, className, flex }: SinglePhotoProps) {
 
   return (
     <div
-      className="relative w-full flex-1 rounded-4xl"
+      className="relative w-full rounded-4xl"
       style={{
         backgroundImage: `url(${imageUrl})`,
         backgroundSize: "cover",

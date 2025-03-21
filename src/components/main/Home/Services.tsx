@@ -15,20 +15,16 @@ function Services() {
         </h1>
         <div className="flex w-full grow flex-col items-center justify-between gap-6">
           <SinglePhoto
-            flex="flex-2"
+            flex={2}
             text="real estate"
             className=""
             imageUrl="/services-1.png"
           />
 
-          <SinglePhoto
-            flex="flex-1"
-            text="marketing"
-            imageUrl="/services-2.jpeg"
-          />
+          <SinglePhoto flex={1} text="marketing" imageUrl="/services-2.jpeg" />
 
           <SinglePhoto
-            flex="flex-1"
+            flex={1}
             text="Business Setup"
             imageUrl="/services-3.jpeg"
           />
