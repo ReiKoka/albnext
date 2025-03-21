@@ -4,26 +4,6 @@ import SinglePhoto from "../../ui/SinglePhoto";
 function Services() {
   const { navHeight } = useNav();
 
-  const servicesData = [
-    {
-      id: 1,
-      flex: "flex-2",
-      text: "real estate",
-      imageUrl: "/services-1.png",
-    },
-    {
-      id: 2,
-      flex: "flex-1",
-      text: "marketing",
-      imageUrl: "/services-2.jpeg",
-    },
-    {
-      id: 3,
-      flex: "flex-1",
-      text: "business setup",
-      imageUrl: "/services-3.jpeg",
-    },
-  ];
   return (
     <section
       style={{ height: `calc(100dvh - ${navHeight}px)` }}
