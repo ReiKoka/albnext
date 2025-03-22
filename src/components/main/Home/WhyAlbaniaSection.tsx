@@ -25,13 +25,13 @@ function WhyAlbaniaSection() {
   return (
     <section
       style={{ height: `calc(100dvh - ${navHeight}px)` }}
-      className="text-foreground bg-muted flex flex-col items-center p-4 lg:py-6"
+      className="text-foreground bg-muted flex flex-col items-center overflow-hidden p-4 lg:py-6"
     >
-      <div className="flex h-full flex-col gap-6 md:gap-2">
+      <div className="flex h-full flex-col gap-6 md:gap-2 w-full">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Why invest in Albania
         </h1>
-        <div className="flex grow flex-col justify-between">
+        <div className="flex h-full max-h-full overflow-hidden grow flex-col justify-between gap-6">
           <div className="flex flex-col gap-2">
             <h3 className="font-primary text-md px-10 text-center font-normal text-balance lg:text-lg">
               Where{" "}
@@ -48,7 +48,7 @@ function WhyAlbaniaSection() {
               climate for ventures of all sizes.
             </p>
           </div>
-          <div className="flex flex-col">
+          <div className="flex h-full max-h-full overflow-hidden grow flex-col">
             {matches ? (
               <WhyAlbaniaWebSlider
                 slides={sliderData}
