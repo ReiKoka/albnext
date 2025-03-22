@@ -8,7 +8,7 @@ function HeroSection() {
   return (
     <section
       className="relative w-full bg-[url('/hero-background.jpeg')] bg-cover bg-bottom bg-no-repeat"
-      style={{ height: `calc(100dvh - ${navHeight}px)` }}
+      style={{ height: `calc(100svh - ${navHeight}px)` }}
     >
       <div className="flex h-full flex-col gap-6 p-3">
         <h1 className="font-primary text-background dark:text-foreground animate-fade-down animate-once animate-duration-1000 animate-delay-[300ms] animate-ease-out mt-auto w-full text-center text-3xl leading-10 font-bold tracking-wide sm:text-3xl md:text-4xl lg:mb-6 lg:text-5xl xl:mb-10">

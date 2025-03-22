@@ -8,7 +8,7 @@ function Services() {
 
   return (
     <section
-      style={{ height: `calc(100dvh - ${navHeight}px)` }}
+      style={{ height: `calc(100svh - ${navHeight}px)` }}
       className="text-foreground bg-muted flex flex-col items-center gap-4 p-4 md:py-6 lg:py-8"
     >
       <div className="flex h-full w-full flex-col gap-8">
