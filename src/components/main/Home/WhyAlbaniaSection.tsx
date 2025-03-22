@@ -11,7 +11,7 @@ function WhyAlbaniaSection() {
   const matches = useMediaQuery("(min-width: 768px)");
 
   const WEB_OPTIONS: EmblaOptionsType = { loop: true };
-  const MOBILE_OPTIONS: EmblaOptionsType = { axis: "y", loop: true, slidesToScroll: 'auto' };
+  const MOBILE_OPTIONS: EmblaOptionsType = { axis: "y", loop: true };
 
   const PLUGINS = [
     Autoplay({

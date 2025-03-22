@@ -23,7 +23,7 @@ function SingleSlideMobile({
         <h2 className="text-foreground font-primary px-2 text-center text-base leading-6 font-bold">
           {title}
         </h2>
-        <p className="font-primary px-2 text-center text-[6px]">
+        <p className="font-primary px-2 text-center text-xs">
           <span>{text}</span>
           <span className="extraText">{extraText}</span>
         </p>
