@@ -31,8 +31,8 @@ function WhyAlbaniaSection() {
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Why invest in Albania
         </h1>
-        <div className="flex h-full max-h-full overflow-hidden grow flex-col justify-between gap-6">
-          <div className="flex flex-col gap-2">
+        <div className="flex h-full max-h-full overflow-hidden grow flex-col justify-between gap-6 xs:gap-12">
+          <div className="flex flex-col gap-2 xs:gap-8">
             <h3 className="font-primary text-md px-10 text-center font-normal text-balance lg:text-lg">
               Where{" "}
               <span className="font-secondary animate-thrice animate-duration-[1000ms] animate-delay-0 animate-ease-out text-primary inline-block animate-bounce">
