@@ -1,23 +1,38 @@
+.embla__web--wrapper {
+  flex-grow: 1;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
 .embla__web--wrapper .embla {
-  max-width: 48rem;
-  margin: auto;
+  max-width: 86%;
+  max-height: 100%;
+  height: 100%;
+  margin-inline: auto;
   --slide-height: fit-content;
   --slide-spacing: 0.5rem;
-  --slide-size: 55%;
+  --slide-size: 60%;
 }
 .embla__web--wrapper .embla__viewport {
   overflow: hidden;
   padding-inline: 1rem;
   position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
 }
 .embla__web--wrapper .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
-  width: fit-content;
+  min-width: 100%;
+  height: 100%;
 }
 .embla__web--wrapper .embla__slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
+  min-width: 0;
 }
 
 .embla__web--wrapper .embla__slide__number {
@@ -26,8 +41,9 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  max-width: 100%;
+  width: 100%;
   user-select: none;
-  margin-left: -50px;
 }
 .embla__web--wrapper .embla__controls {
   display: none;
