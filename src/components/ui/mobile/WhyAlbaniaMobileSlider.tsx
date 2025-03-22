@@ -35,10 +35,11 @@ function WhyAlbaniaMobileSlider({ slides, options, plugins}: WhyAlbaniaMobileSli
               </div>
             ))}
           </div>
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
 
-        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+
 
         {/* <div className="embla__dots">
             {scrollSnaps.map((_, index) => (
