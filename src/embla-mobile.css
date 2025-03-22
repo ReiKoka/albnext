@@ -1,6 +1,14 @@
+.embla__mobile--wrapper {
+  margin-block: 10px;
+}
+
+.extraText {
+  display: none;
+}
+
 .embla__mobile--wrapper .embla {
   width: 100%;
-  --slide-height: 17rem;
+  --slide-height: 14rem;
   --slide-spacing: 2rem;
   --slide-size: 100%;
   position: relative;
@@ -111,4 +119,16 @@
 
 .embla__mobile--wrapper .embla__dot--selected:after {
   box-shadow: inset 0 0 0 0.2rem var(--text-body);
+}
+
+@media screen and (min-width: 375px) {
+  .embla__mobile--wrapper {
+    margin-block: 1rem;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .extraText {
+    display: inline;
+  }
 }

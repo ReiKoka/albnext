@@ -12,4 +12,5 @@ export type SingleSlideType = {
   icon: object;
   title: string;
   text: string;
+  extraText: string;
 };

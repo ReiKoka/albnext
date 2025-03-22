@@ -30,6 +30,7 @@ function WhyAlbaniaMobileSlider({ slides, options, plugins}: WhyAlbaniaMobileSli
                   icon={slide.icon}
                   title={slide.title}
                   text={slide.text}
+                  extraText={slide.extraText}
                 />
               </div>
             ))}

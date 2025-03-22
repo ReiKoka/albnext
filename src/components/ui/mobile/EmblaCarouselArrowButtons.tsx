@@ -54,7 +54,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="embla__button--prev absolute -top-8 left-[50%] -translate-x-[50%]"
+      className="embla__button--prev absolute -top-7 left-[50%] -translate-x-[50%]"
       type="button"
       {...restProps}
     >

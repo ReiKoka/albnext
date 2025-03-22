@@ -7,7 +7,7 @@
 }
 .embla__web--wrapper .embla__viewport {
   overflow: hidden;
-  padding: 1rem;
+  padding-inline: 1rem;
   position: relative;
 }
 .embla__web--wrapper .embla__container {
@@ -22,8 +22,6 @@
 
 .embla__web--wrapper .embla__slide__number {
   border-radius: 1.8rem;
-  font-size: 4rem;
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +30,7 @@
   margin-left: -50px;
 }
 .embla__web--wrapper .embla__controls {
-  display: grid;
+  display: none;
   grid-template-columns: auto 1fr;
   justify-content: space-between;
   gap: 1.2rem;

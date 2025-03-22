@@ -9,13 +9,13 @@ function Services() {
   return (
     <section
       style={{ height: `calc(100dvh - ${navHeight}px)` }}
-      className="text-foreground bg-muted flex flex-col items-center gap-4 p-4 lg:py-8"
+      className="text-foreground bg-muted flex flex-col items-center gap-4 p-4 md:py-6 lg:py-8"
     >
       <div className="flex h-full w-full flex-col gap-8">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Our Services
         </h1>
-        <div className="flex w-full max-w-[70%] xl:max-w-[50%] mx-auto grow flex-col items-center justify-between gap-6 md:grid md:grid-cols-2 md:grid-rows-[10px_1fr_1fr_10px]">
+        <div className="mx-auto flex w-full max-w-[70%] grow flex-col items-center justify-between gap-6 md:grid md:grid-cols-2 md:grid-rows-[10px_1fr_1fr_10px] xl:max-w-[50%]">
           <SinglePhoto
             flex={2}
             title="real estate"
