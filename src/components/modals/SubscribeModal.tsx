@@ -48,7 +48,7 @@ function SubscribeModal({
         <Button
           type="button"
           variant="default"
-          className="bg-foreground dark:bg-background border-background justify-center py-2.5 text-sm font-light tracking-wider uppercase"
+          className="bg-foreground dark:bg-background border-foreground dark:border-background justify-center py-2.5 text-sm font-light tracking-wider uppercase"
         >
           Submit
         </Button>
