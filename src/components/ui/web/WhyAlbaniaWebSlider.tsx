@@ -117,6 +117,7 @@ function WhyAlbaniaWebSlider({ slides, options, plugins }: WhyAlbaniaWebSliderPr
                     icon={slide.icon}
                     title={slide.title}
                     text={slide.text}
+                    extraText={slide.extraText}
                   />
                 </div>
               </div>
