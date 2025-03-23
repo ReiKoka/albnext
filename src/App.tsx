@@ -7,6 +7,7 @@ import Login from "./routes/Login";
 import WhyAlbania from "./routes/WhyAlbania";
 import LandingPage from "./routes/LandingPage";
 import { NavHeightProvider } from "./context/NavHeightContext";
+import { ModalProvider } from "./context/ModalContext";
 
 const hostname = window.location.hostname;
 const isAdmin = hostname.startsWith("admin");
@@ -31,11 +32,13 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ThemeProvider>
-      <NavHeightProvider>
-        <MobileNavProvider>
-          <RouterProvider router={router} />
-        </MobileNavProvider>
-      </NavHeightProvider>
+      <ModalProvider>
+        <NavHeightProvider>
+          <MobileNavProvider>
+            <RouterProvider router={router} />
+          </MobileNavProvider>
+        </NavHeightProvider>
+      </ModalProvider>
     </ThemeProvider>
   );
 }

@@ -21,7 +21,7 @@ function SingleSlideWeb({ icon, title, text, extraText }: SingleSlideWebProps) {
           </h2>
           <p className="font-primary text-right text-[10px] leading-3 font-light lg:leading-3.5 text-balance">
             <span>{text}</span>
-            <span className="hidden md:inline">{extraText}</span>
+            <span className="hidden lg:inline">{extraText}</span>
           </p>
         </div>
       </div>

@@ -40,7 +40,7 @@ function WhyAlbaniaSection() {
               </span>{" "}
               meets growth
             </h3>
-            <p className="font-primary mx-auto w-[85dvw] px-4 text-justify text-sm leading-4 font-light text-wrap md:max-w-[600px] md:leading-5" >
+            <p className="font-primary mx-auto w-[85dvw] px-4 text-center text-sm font-light text-wrap md:max-w-[600px] md:leading-4" >
               Albania is becoming a high-potential destination for investors
               looking to tap into Southeast Europe’s emerging markets. With a
               rapidly modernizing infrastructure, competitive labor costs, and

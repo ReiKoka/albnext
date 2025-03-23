@@ -1,6 +1,6 @@
 import { createContext, FC, ReactNode, useState } from "react";
 
-export type ModalType = `open-service-${string}` | null;
+export type ModalType = `open-service-${string}` | `join-mailing-list` | null;
 
 interface ModalContextType {
   activeModal: ModalType;

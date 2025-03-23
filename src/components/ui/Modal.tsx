@@ -1,8 +1,8 @@
+import clsx from "clsx";
 import { ReactNode, useRef } from "react";
 import { createPortal } from "react-dom";
-import Button from "./Button";
-import { HiXMark } from "react-icons/hi2";
-import { useOnClickOutside } from "usehooks-ts";
+import { twMerge } from "tailwind-merge";
+import { useEventListener, useOnClickOutside } from "usehooks-ts";
 
 interface ModalProps {
   isOpen: boolean;
@@ -10,6 +10,8 @@ interface ModalProps {
   title: string;
   description?: string;
   children: ReactNode;
+  titleClassName?: string;
+  modalClassName?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -18,54 +20,52 @@ const Modal: React.FC<ModalProps> = ({
   title,
   description,
   children,
+  titleClassName,
+  modalClassName,
 }) => {
   const innerRef = useRef<HTMLDivElement>(null);
+
+  const baseTitleStyles = `font-primary text-foreground dark:text-background text-center capitalize ${
+    description ? "-mb-2" : "pb-6"
+  } text-xl font-semibold`;
+  const titleStyle = twMerge(clsx(baseTitleStyles, titleClassName));
+
+  const baseModalStyle =
+    "bg-background dark:bg-foreground animate-jump-in animate-ease-out relative flex max-h-[90dvh] w-full max-w-md flex-col overflow-y-auto rounded-lg p-6 shadow-slide-2 duration-500";
+  const modalStyle = twMerge(clsx(baseModalStyle, modalClassName));
+
   useOnClickOutside(innerRef as React.RefObject<HTMLDivElement>, onClose);
-  
+  useEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      onClose();
+    }
+  });
+
   if (!isOpen) return null;
 
   const modalContent = (
     <>
       <div
-        className="animate-fade animate-once animate-duration-1000 animate-ease-out dark:bg-secondary/30 fixed inset-0 z-40 h-full w-full bg-transparent backdrop-blur-[5px]"
+        className="animate-fade animate-once animate-duration-1000 animate-ease-out dark:bg-secondary/30 fixed inset-0 z-40 h-full w-full bg-transparent backdrop-blur-[2.5px]"
         onClick={onClose}
         style={{ pointerEvents: "auto" }}
       ></div>
 
       <dialog
         open
-        className="fixed inset-0 z-50 m-0 flex h-dvh w-dvw items-center justify-center border-0 bg-transparent p-0"
+        className="fixed inset-0 z-50 m-0 flex h-dvh w-dvw items-center justify-center border-0 bg-transparent p-8"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
       >
-        <div
-          className="bg-background dark:border-muted dark:bg-secondary shadow-muted-foreground dark:shadow-muted animate-jump-in animate-ease-out relative flex max-h-[90dvh] w-full max-w-md flex-col overflow-y-auto rounded-lg p-6 shadow-sm duration-500 dark:border"
-          ref={innerRef}
-        >
-          <Button
-            variant="icon"
-            className="border-destructive group/x hover:bg-destructive group w-fit self-end"
-            onClick={onClose}
-          >
-            <HiXMark
-              className="fill-destructive group-hover/x:fill-destructive-foreground"
-              size={20}
-            />
-          </Button>
-          <h2
-            className={`font-secondary text-foreground text-center ${
-              description ? "-mb-2" : "pb-6"
-            } text-xl font-semibold`}
-          >
-            {title}
-          </h2>
+        <div className={modalStyle} ref={innerRef}>
+          <h2 className={titleStyle}>{title}</h2>
           {description && (
             <p className="font-primary text-foreground pb-6 text-center">
               {description}
             </p>
           )}
-          <div className="w-full max-w-full">{children}</div>
+          <div className="w-full max-w-full grow h-full flex flex-col">{children}</div>
         </div>
       </dialog>
     </>
