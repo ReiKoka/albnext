@@ -44,6 +44,7 @@ function SubscribeModal({
           type="email"
           placeholder="Enter your email..."
           icon={<HiOutlineEnvelope />}
+          className="text-base"
         />
         <Button
           type="button"
