@@ -32,7 +32,7 @@ function LandingPage() {
         modalType="join-mailing-list"
         onClose={closeModal}
         titleClassName="mt-12 pb-0 uppercase text-xl "
-        modalClassName="min-h-80 gap-20"
+        modalClassName="min-h-80 gap-20 md:gap-30"
       />
     </div>
   );
