@@ -3,6 +3,7 @@ import useModal from "../../hooks/useModal";
 import Input from "../ui/Input";
 import Modal from "../ui/Modal";
 import Button from "../ui/Button";
+import handWithMail from "../../assets/images/hand-with-mail.png";
 
 type SubscribeModalProps = {
   title: string;
@@ -31,11 +32,11 @@ function SubscribeModal({
       modalClassName={modalClassName}
     >
       <img
-        src="/src/assets/images/hand-with-mail.png"
+        src={handWithMail}
         className="absolute top-5 right-0 -z-10 h-auto w-full opacity-50"
       />
       <div className="flex h-full w-full grow flex-col justify-end gap-2">
-        <p className="text-light mb-4 text-secondary w-full text-center text-base font-primary">
+        <p className="text-light text-secondary font-primary mb-4 w-full text-center text-base">
           Sign up for exclusive updates, free e-books & free consultation
         </p>
         <Input
