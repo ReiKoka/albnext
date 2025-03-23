@@ -15,7 +15,7 @@ function Nav({ navRef }: NavProps) {
   return (
     <div
       ref={navRef}
-      className="bg-background fixed top-0 left-0 z-50 flex w-full items-center justify-between p-5 md:p-6"
+      className="bg-background fixed top-0 left-0 z-50 flex w-full items-center justify-between p-5 md:p-6 max-h-full"
     >
       <Logo />
       {matches && <WebNav />}
