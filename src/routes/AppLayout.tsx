@@ -8,17 +8,17 @@ function AppLayout() {
   const { navRef, navHeight } = useNav();
 
   return (
-    <div className="relative mx-auto h-dvh min-h-dvh w-full max-w-[2000px]">
+    <div className="mx-auto h-dvh max-h-svh w-full max-w-[2000px]">
       <div
-        className={`bg-logo/20 absolute inset-0 z-10 backdrop-blur-sm ${
+        className={`bg-logo/20 fixed inset-0 z-10 backdrop-blur-sm ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         } transition-opacity duration-700`}
       ></div>
 
-      <div className="flex h-full flex-col">
+      <div className="relative flex h-full flex-col overflow-hidden">
         <Nav navRef={navRef} />
         <div
-          className="grow"
+          className="grow overflow-y-auto"
           style={{ height: `calc(100% - ${navHeight})`, marginTop: navHeight }}
         >
           <Outlet />
