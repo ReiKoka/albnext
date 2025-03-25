@@ -24,14 +24,14 @@ function WhyAlbaniaSection() {
 
   return (
     <section
-      style={{ height: `calc(100svh - ${navHeight}px)` }}
-      className="text-foreground bg-muted flex flex-col items-center overflow-hidden p-4 lg:py-6 xl:py-10"
+      style={{ "--nav-height": `${navHeight}px` } as React.CSSProperties}
+      className="text-foreground bg-muted flex h-[calc(100svh_-_var(--nav-height))] flex-col items-center overflow-hidden p-4 lg:py-6 xl:py-10 landscape:h-[calc(200svh_-_var(--nav-height))] landscape:lg:h-[calc(100svh_-_var(--nav-height))]"
     >
-      <div className="flex h-full w-full flex-col gap-6 md:gap-2 lg:gap-4 xl:gap-8 ">
+      <div className="flex h-full w-full flex-col gap-6 md:gap-2 lg:gap-4 xl:gap-8">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Why invest in Albania
         </h1>
-        <div className="xs:gap-12 flex h-full max-h-full grow flex-col justify-between gap-6 overflow-hidden md:gap-0 ">
+        <div className="xs:gap-12 flex h-full max-h-full grow flex-col justify-between gap-6 overflow-hidden md:gap-0">
           <div className="xs:gap-8 flex flex-col gap-2">
             <h3 className="font-primary text-md px-10 text-center font-normal text-balance lg:text-lg">
               Where{" "}
@@ -40,7 +40,7 @@ function WhyAlbaniaSection() {
               </span>{" "}
               meets growth
             </h3>
-            <p className="font-primary mx-auto w-[85dvw] px-4 text-center text-sm font-light text-wrap md:max-w-[600px] md:leading-4" >
+            <p className="font-primary mx-auto w-[85dvw] px-4 text-center text-sm font-light text-wrap md:max-w-[600px] md:leading-4">
               Albania is becoming a high-potential destination for investors
               looking to tap into Southeast Europe’s emerging markets. With a
               rapidly modernizing infrastructure, competitive labor costs, and

@@ -18,7 +18,7 @@ function AppLayout() {
       <div className="relative flex h-full flex-col overflow-hidden">
         <Nav navRef={navRef} />
         <div
-          className="grow overflow-y-auto"
+          className="grow overflow-y-auto "
           style={{ height: `calc(100% - ${navHeight})`, marginTop: navHeight }}
         >
           <Outlet />

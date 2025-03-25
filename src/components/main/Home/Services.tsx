@@ -11,35 +11,21 @@ function Services() {
       style={{ height: `calc(100svh - ${navHeight}px)` }}
       className="text-foreground bg-muted flex flex-col items-center gap-4 p-4 md:py-6 lg:py-8"
     >
-      <div className="flex h-full w-full flex-col gap-8">
+      <div className="flex h-full w-full overflow-hidden flex-col gap-4">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Our Services
         </h1>
-        <div className="mx-auto flex w-full max-w-[70%] grow flex-col items-center justify-between gap-6 md:grid md:grid-cols-2 md:grid-rows-[10px_1fr_1fr_10px] xl:max-w-[50%]">
+        <div className="flex flex-col gap-4 h-full grow overflow-hidden landscape:flex-row md:flex-row">
           <SinglePhoto
-            flex={2}
             title="real estate"
-            text="Tap into Albania’s booming property sector with a partner who knows the landscape from the inside out. Our premium, end-to-end service covers everything from scouting exclusive off-market opportunities to managing post-purchase logistics. By combining meticulous research with real-world expertise, we deliver property investments designed for lasting returns."
-            imageUrl={!matches ? "/services-1.png" : "/services-1-web.png"}
-            divClassName="md:row-start-1 md:row-end-5 h-full"
-            h1ClassName="top-[51%] 2xl:top-[85%] 2xl:left-[70%]"
-            pClassName=""
-          />
-
-          <SinglePhoto
-            flex={1}
-            title="marketing"
             text=""
-            imageUrl="/services-2.jpeg"
-            divClassName="md:h-full md:row-start-2"
+            imageUrl={matches ? "/services-1-web.png" : "/services-1.png"}
           />
-
           <SinglePhoto
-            flex={1}
-            title="Business Setup"
+            title="business consulting services"
             text=""
             imageUrl="/services-3.jpeg"
-            divClassName="md:h-full md:pb-8 md:row-start-3"
+            divClassName="md:ml-0 md:mr-auto"
           />
         </div>
       </div>
