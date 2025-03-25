@@ -107,6 +107,7 @@
   --logo: hsl(0, 0%, 10%);
   --shadow-custom: hsla(211, 81%, 8%, 0.4) 0px 30px 90px;
   --shadow-toast: hsla(0, 0%, 39%, 0.5) 0px 2px 8px 0px;
+  --modal-blue: hsl(240, 92%, 27%);
   --shadow-slide:
     rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   --shadow-slide-2: rgba(0, 0, 0, 0.09) 0px 3px 12px;
@@ -117,12 +118,14 @@
   --foreground: hsl(0, 0%, 95%);
   --primary: hsl(180, 98%, 41%);
   --primary-foreground: hsl(0, 0%, 95%);
-  --muted: hsl(211, 100%, 12%);  
+  --muted: hsl(211, 100%, 12%);
   --muted-foreground: hsl(212, 7%, 63%);
   --destructive: hsl(0 60% 50%);
   --destructive-foreground: hsl(276 5% 90%);
   --border: hsl(211 20% 18%);
   --input: hsl(180, 98%, 25%);
+  --modal-blue: hsl(240, 92%, 27%);
+
   --ring: hsl(180, 98%, 41%);
   --shadow-custom: hsla(211, 81%, 8%, 0.4) 0px 30px 90px;
   --shadow-toast:
@@ -132,7 +135,6 @@
     hsla(211, 81%, 8%, 0.16) 0px 0px 5px 0px,
     hsla(211, 81%, 8%, 0.32) 0px 0px 1px 0px;
 }
-
 
 @theme inline {
   --color-background: var(--background);
@@ -149,6 +151,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-logo: var(--logo);
+  --color-service: var(--modal-blue);
   --font-primary: "Helvetica Neue", sans-serif;
   --font-secondary: "Ogilvy Sans Serif", sans-serif;
   --shadow-custom: var(--shadow-custom);

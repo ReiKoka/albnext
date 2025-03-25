@@ -1,10 +1,19 @@
 import { useMediaQuery } from "usehooks-ts";
 import useNav from "../../../hooks/useNav";
 import SinglePhoto from "../../ui/SinglePhoto";
+import ServiceModal from "../../modals/ServiceModal";
+import useModal from "../../../hooks/useModal";
 
 function Services() {
   const { navHeight } = useNav();
   const matches = useMediaQuery("(min-width: 768px");
+
+  const { openModal, closeModal } = useModal();
+
+  const onClickService = (e: React.MouseEvent<HTMLDivElement>) => {
+    const id = e.currentTarget.dataset.id;
+    openModal(`open-service-${id}`);
+  };
 
   return (
     <section
@@ -21,17 +30,27 @@ function Services() {
             text="Tap into Albania’s booming property sector with a partner who knows the landscape from the inside out. Our premium, end-to-end service covers everything from scouting exclusive off-market opportunities to managing post-purchase logistics."
             imageUrl={matches ? "/services-1-web.png" : "/services-1.png"}
             divClassName="landscape:mx-0 landscape:ml-auto"
+            onClick={onClickService}
+            dataId={1}
           />
           <SinglePhoto
             title="business consulting services"
             text="Streamline your entrance into Albania’s thriving economy! We handle the details-company registration, regulatory compliance, and strategic consulting. Thanks to our local connections and industry insight, your new venture is built on a foundation of confidence and clarity."
             imageUrl="/services-3.jpeg"
             divClassName="landscape:mx-0 landscape:mr-auto"
-            h1ClassName="md:top-12 lg:top-14 lg:left-4"
+            h1ClassName="md:top-12 lg:top-14 lg:left-4 lg:bottom-auto"
             pClassName="md:top-auto md:bottom-10 md:right-0 md:left-auto"
+            onClick={onClickService}
+            dataId={2}
           />
         </div>
       </div>
+      <ServiceModal
+        modalType="open-service-1"
+        onClose={closeModal}
+        modalClassName="rounded-4xl p-4 lg:p-8 bg-service"
+      />
+      <ServiceModal modalType="open-service-2" onClose={closeModal} />
     </section>
   );
 }

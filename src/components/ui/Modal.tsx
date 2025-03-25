@@ -7,7 +7,7 @@ import { useEventListener, useOnClickOutside } from "usehooks-ts";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  title: string;
+  title?: string;
   description?: string;
   children: ReactNode;
   titleClassName?: string;
@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({
   const titleStyle = twMerge(clsx(baseTitleStyles, titleClassName));
 
   const baseModalStyle =
-    "bg-background dark:bg-foreground animate-jump-in animate-ease-out relative flex max-h-[90dvh] w-full max-w-md flex-col overflow-y-auto rounded-lg p-6 shadow-slide-2 duration-500 portrait:md:aspect-square";
+    "bg-background dark:bg-foreground animate-jump-in animate-ease-out relative flex max-h-[90dvh] w-full max-w-md flex-col overflow-y-auto rounded-lg p-6 shadow-slide-2 duration-500 ";
   const modalStyle = twMerge(clsx(baseModalStyle, modalClassName));
 
   useOnClickOutside(innerRef as React.RefObject<HTMLDivElement>, onClose);
@@ -59,13 +59,15 @@ const Modal: React.FC<ModalProps> = ({
         aria-modal="true"
       >
         <div className={modalStyle} ref={innerRef}>
-          <h2 className={titleStyle}>{title}</h2>
+          {title && <h2 className={titleStyle}>{title}</h2>}
           {description && (
             <p className="font-primary text-foreground pb-6 text-center">
               {description}
             </p>
           )}
-          <div className="w-full max-w-full grow h-full flex flex-col">{children}</div>
+          <div className="flex h-full w-full max-w-full grow flex-col">
+            {children}
+          </div>
         </div>
       </dialog>
     </>

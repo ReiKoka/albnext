@@ -8,10 +8,12 @@ type SinglePhotoProps = {
   divClassName?: string;
   h1ClassName?: string;
   pClassName?: string;
+  onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
+  dataId: number;
 };
 
 //prettier-ignore
-function SinglePhoto({ title, text, imageUrl, divClassName, h1ClassName, pClassName, }: SinglePhotoProps) {
+function SinglePhoto({ title, text, imageUrl, divClassName, h1ClassName, pClassName, onClick, dataId }: SinglePhotoProps) {
 
   const pBaseStyles = "font-primary text-background dark:text-foreground text-[10px] font-light absolute z-20 w-[80%] hidden md:block md:px-4 md:leading-4 md:top-10 md:left-4 "
   const pStyles = twMerge(clsx(pBaseStyles, pClassName))
@@ -26,7 +28,7 @@ function SinglePhoto({ title, text, imageUrl, divClassName, h1ClassName, pClassN
   const divStyles = twMerge(clsx(divBaseStyles, divClassName))
 
   return (
-    <div className="flex-1 flex h-full w-full overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer">
+    <div className="flex-1 flex h-full w-full overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer" onClick={onClick} data-id={dataId}>
       <div
         className={divStyles}
         style={{ backgroundImage: `url(${imageUrl})` }}
