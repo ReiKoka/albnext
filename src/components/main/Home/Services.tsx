@@ -8,24 +8,26 @@ function Services() {
 
   return (
     <section
-      style={{ height: `calc(100svh - ${navHeight}px)` }}
-      className="text-foreground bg-muted flex flex-col items-center gap-4 p-4 md:py-6 lg:py-8"
+      style={{ "--nav-height": `${navHeight}px` } as React.CSSProperties}
+      className="text-foreground bg-muted flex h-[calc(100svh_-_var(--nav-height))] flex-col items-center gap-4 p-4 md:py-6 lg:py-8 landscape:h-[calc(120svh_-_var(--nav-height))]"
     >
-      <div className="flex h-full w-full overflow-hidden flex-col gap-4">
+      <div className="flex h-full w-full flex-col gap-4 overflow-hidden">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
           Our Services
         </h1>
-        <div className="flex flex-col gap-4 h-full grow overflow-hidden landscape:flex-row md:flex-row">
+        <div className="flex h-full grow flex-col gap-4 overflow-hidden md:flex-row landscape:flex-row">
           <SinglePhoto
             title="real estate"
             text=""
             imageUrl={matches ? "/services-1-web.png" : "/services-1.png"}
+            divClassName="landscape:mx-0 landscape:ml-auto"
+
           />
           <SinglePhoto
             title="business consulting services"
             text=""
             imageUrl="/services-3.jpeg"
-            divClassName="md:ml-0 md:mr-auto"
+            divClassName="landscape:mx-0 landscape:mr-auto"
           />
         </div>
       </div>
