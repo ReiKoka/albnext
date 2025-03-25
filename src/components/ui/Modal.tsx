@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({
   const titleStyle = twMerge(clsx(baseTitleStyles, titleClassName));
 
   const baseModalStyle =
-    "bg-background dark:bg-foreground animate-jump-in animate-ease-out relative flex max-h-[90dvh] w-full max-w-md flex-col overflow-y-auto rounded-lg p-6 shadow-slide-2 duration-500";
+    "bg-background dark:bg-foreground animate-jump-in animate-ease-out relative flex max-h-[90dvh] w-full max-w-md flex-col overflow-y-auto rounded-lg p-6 shadow-slide-2 duration-500 portrait:md:aspect-square";
   const modalStyle = twMerge(clsx(baseModalStyle, modalClassName));
 
   useOnClickOutside(innerRef as React.RefObject<HTMLDivElement>, onClose);
@@ -46,7 +46,7 @@ const Modal: React.FC<ModalProps> = ({
   const modalContent = (
     <>
       <div
-        className="animate-fade animate-once animate-duration-1000 animate-ease-out dark:bg-secondary/30 fixed inset-0 z-40 h-full w-full bg-transparent backdrop-blur-[2.5px]"
+        className="animate-fade animate-once animate-duration-1000 animate-ease-out dark:bg-secondary/30 fixed inset-0 z-40 h-full w-full bg-transparent backdrop-blur-[3px]"
         onClick={onClose}
         style={{ pointerEvents: "auto" }}
       ></div>

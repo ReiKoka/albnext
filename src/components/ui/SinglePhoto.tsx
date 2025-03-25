@@ -13,12 +13,12 @@ type SinglePhotoProps = {
 //prettier-ignore
 function SinglePhoto({ title, text, imageUrl, divClassName, h1ClassName, pClassName, }: SinglePhotoProps) {
 
-  const pBaseStyles = "font-primary text-background dark:text-foreground text-[6px] font-light absolute z-20 hidden"
+  const pBaseStyles = "font-primary text-background dark:text-foreground text-[10px] font-light absolute z-20 w-[80%] hidden md:block md:px-4 md:leading-4 md:top-10 md:left-4 "
   const pStyles = twMerge(clsx(pBaseStyles, pClassName))
 
 
   const h1BaseStyles =
-    "font-primary text-background dark:text-foreground text-2xl md:text-3xl px-4 font-bold capitalize absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-full text-center z-20 md:top-[90%] md:left-0 md:translate-x-0";
+    "font-primary text-background dark:text-foreground text-2xl md:text-3xl px-4 font-bold capitalize absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-20 w-fit md:top-auto md:left-auto md:translate-x-0 md:translate-y-0 md:right-0 md:bottom-12 portrait:lg:text-5xl lg:right-4 lg:bottom-14 portrait:lg:leading-14";
   const h1Styles = twMerge(clsx(h1BaseStyles, h1ClassName));
 
 
@@ -26,12 +26,12 @@ function SinglePhoto({ title, text, imageUrl, divClassName, h1ClassName, pClassN
   const divStyles = twMerge(clsx(divBaseStyles, divClassName))
 
   return (
-    <div className="flex-1 flex h-full w-full overflow-hidden">
+    <div className="flex-1 flex h-full w-full overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer">
       <div
         className={divStyles}
         style={{ backgroundImage: `url(${imageUrl})` }}
       >
-        <div className="absolute top-0 left-0 h-full z-10 w-full rounded-4xl bg-black opacity-35"></div>
+        <div className="absolute top-0 left-0 h-full z-10 w-full  rounded-4xl bg-black opacity-35 pointer-events-none"></div>
         <p className={pStyles}>{text}</p>
         <h1 className={h1Styles}>{title}</h1>
       </div>

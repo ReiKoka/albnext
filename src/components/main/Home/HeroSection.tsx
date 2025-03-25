@@ -14,7 +14,7 @@ function HeroSection() {
         <h1 className="font-primary text-background dark:text-foreground animate-fade-down animate-once animate-duration-1000 animate-delay-[300ms] animate-ease-out mt-auto w-full text-center text-3xl leading-10 font-bold tracking-wide sm:text-3xl md:text-4xl lg:mb-6 lg:text-5xl xl:mb-10">
           Your trusted gateway to Albania
         </h1>
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:gap-8 lg:mb-10 xl:mb-24">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:gap-8 lg:mb-10 xl:mb-24 portrait:md:mb-20">
           <Button
             variant="outline"
             className="dark:text-foreground dark:border-foreground border-background text-background before:bg-background hover:text-foreground hover:border-background relative z-10 flex max-h-40 w-full items-center justify-center overflow-hidden border-2 text-sm before:absolute before:top-0 before:-z-10 before:h-full before:w-full before:-translate-x-[100%] before:transition-all before:duration-500 before:content-[''] hover:scale-100 hover:before:translate-x-0 sm:w-fit"

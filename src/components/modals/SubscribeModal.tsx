@@ -33,10 +33,10 @@ function SubscribeModal({
     >
       <img
         src={handWithMail}
-        className="absolute top-5 right-0 -z-10 h-auto w-full opacity-50"
+        className="absolute top-5 right-0 -z-10 h-auto w-full opacity-50 landscape:top-1"
       />
-      <div className="flex h-full w-full grow flex-col justify-end gap-2">
-        <p className="text-light text-secondary font-primary mb-4 w-full text-center text-base">
+      <div className="flex h-full w-full grow flex-col justify-end gap-2 ">
+        <p className="text-light text-secondary font-primary mb-4 w-full text-center text-base landscape:text-xs landscape:mb-0">
           Sign up for exclusive updates, free e-books & free consultation
         </p>
         <Input

@@ -25,7 +25,7 @@ function WhyAlbaniaSection() {
   return (
     <section
       style={{ "--nav-height": `${navHeight}px` } as React.CSSProperties}
-      className="text-foreground bg-muted flex h-[calc(100svh_-_var(--nav-height))] flex-col items-center overflow-hidden p-4 lg:py-6 xl:py-10 landscape:h-[calc(200svh_-_var(--nav-height))] landscape:lg:h-[calc(100svh_-_var(--nav-height))]"
+      className="text-foreground bg-muted flex h-[calc(100svh_-_var(--nav-height))] flex-col items-center overflow-hidden p-4 portrait:md:py-8 lg:py-6 xl:py-10 landscape:h-[calc(200svh_-_var(--nav-height))] landscape:lg:h-[calc(100svh_-_var(--nav-height))]"
     >
       <div className="flex h-full w-full flex-col gap-6 md:gap-2 lg:gap-4 xl:gap-8">
         <h1 className="font-primary text-center text-3xl font-light md:text-4xl lg:text-5xl">
